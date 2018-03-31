@@ -34,8 +34,7 @@
 # may want to provide OVERWRITING values on the command line.
 # For example:
 #
-#  JAVA_HOME=/usr/java/testing hdfs dfs -ls
-#
+#  JAVA_HOME=/usr/java/testing hdfs dfs -ls #
 # Therefore, the vast majority (BUT NOT ALL!) of these defaults
 # are configured for substitution and not append.  If append
 # is preferable, modify this file accordingly.
@@ -48,14 +47,20 @@
 # All others are optional.  However, the defaults are probably not
 # preferred.  Many sites configure these options outside of Hadoop,
 # such as in /etc/profile.d
-
-# The java implementation to use. By default, this environment
-# variable is REQUIRED on ALL platforms except OS X!
-# export JAVA_HOME=
+# The java implementation to use. By default, this environment 
+# variable is REQUIRED on ALL platforms except OS X!  
+export JAVA_HOME=/opt/jdk1.8.0_162
 
 # Location of Hadoop.  By default, Hadoop will attempt to determine
 # this location based upon its execution path.
-# export HADOOP_HOME=
+export HADOOP_HOME=/opt/hadoop-3.0.0
+export HADOOP_HOME_WARN_SUPPRESS=1
+
+export HADOOP_COMMON_HOME=/opt/hadoop-3.0.0
+export HADOOP_HDFS_HOME=/opt/hadoop-3.0.0
+export HADOOP_YARN_HOME=/opt/hadoop-3.0.0
+export HADOOP_MAPRED_HOME=/opt/hadoop-3.0.0
+
 
 # Location of Hadoop's configuration information.  i.e., where this
 # file is living. If this is not defined, Hadoop will attempt to
@@ -197,7 +202,7 @@ esac
 # Where (primarily) daemon log files are stored.
 # ${HADOOP_HOME}/logs by default.
 # Java property: hadoop.log.dir
-# export HADOOP_LOG_DIR=${HADOOP_HOME}/logs
+export HADOOP_LOG_DIR=/var/log/hadoop
 
 # A string representing this instance of hadoop. $USER by default.
 # This is used in writing log and pid files, so keep that in mind!
@@ -411,3 +416,4 @@ esac
 #
 # For example, to limit who can execute the namenode command,
 # export HDFS_NAMENODE_USER=hdfs
+export HADOOP_PREFIX=/opt/hadoop-3.0.0
